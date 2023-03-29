@@ -1,5 +1,5 @@
-import {} from '';
-import {} from '';
+import { Component } from 'react';
+import { ContactFilter } from './Contacts/ContactFilter/ContactFilter';
 import {} from '';
 import {} from '';
 import {} from '';
@@ -14,5 +14,20 @@ export class App extends Component {
       { id: 'id-4', name: 'Gena Ciderusni', number: '227-91-26' },
     ],
     filter: '',
+  };
+
+  addNewContacts = (newContact, { action }) => {
+    const { contacts } = this.state;
+
+    const duplicateName = contacts.map(el => el.name.toLowerCase());
+
+    return duplicateName.includes(newContact.name.toLowerCase())
+      ? alert(`${newContact.name} is already in contacts.`)
+      : this.setState(prevState => {
+          action.resetForm();
+          return {
+            contacts: [...prevState.contacts, newContact],
+          };
+        });
   };
 }
