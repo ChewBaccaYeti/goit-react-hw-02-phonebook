@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { ContactFilter } from './Contacts/ContactFilter/ContactFilter';
-import { Container } from '';
-import { ContactForm } from './Contacts/ContactForm/ContactFrom';
-import { ContactItem } from './Contacts/ContactItem/ContactItem';
+import { Container } from './Layout/Container.styled';
+import { GlobalStyle } from './Layout/GlobalStyle';
+import { ContactFilter } from './Contacts/ContactFilter/Filter';
+import { ContactForm } from './Contacts/ContactForm/ContactForm';
 import { ContactList } from './Contacts/ContactList/ContactList';
 
 export class App extends Component {

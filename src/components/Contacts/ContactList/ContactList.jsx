@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { ListItem, List } from '../ContactItem/ContactItem';
+import { ListItem } from '../ContactItem/ContactItem';
+import { List } from './ContactList.styled';
 
 export const ContactList = ({ contacts, deleteContact }) => {
   return (
@@ -9,7 +10,7 @@ export const ContactList = ({ contacts, deleteContact }) => {
   );
 };
 
-ContactList.propoTypes = {
+ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
   deleteContact: PropTypes.func.isRequired,
 };
