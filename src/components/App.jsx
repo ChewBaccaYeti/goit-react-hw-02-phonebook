@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Container } from './Layout/Container.styled';
 import { GlobalStyle } from './Layout/GlobalStyle';
-import { ContactFilter } from './Contacts/ContactFilter/Filter';
+import { ContactFilter } from './Contacts/ContactFilter/ContactFilter';
 import { ContactForm } from './Contacts/ContactForm/ContactForm';
 import { ContactList } from './Contacts/ContactList/ContactList';
 
@@ -37,7 +37,7 @@ export class App extends Component {
     }));
   };
 
-  changeFilter = e => {
+  changeContactFilter = e => {
     this.setState({ filter: e.target.value });
   };
 
@@ -61,7 +61,7 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addNewContacts} />
         <h2>Contacts</h2>
-        <ContactFilter value={filter} onChange={this.changeFilter} />
+        <ContactFilter value={filter} onChange={this.changeContactFilter} />
         <ContactList
           contacts={visibleContacts}
           deleteContact={this.onDeleteContacts}

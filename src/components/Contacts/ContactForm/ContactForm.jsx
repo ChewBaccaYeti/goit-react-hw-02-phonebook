@@ -1,6 +1,6 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { Form, Label, Button } from './ContactForm.styled';
-import { ContactSchema, phoneNumberMask } from 'components/Utils/Validate';
+import { ContactSchema, phoneNumberMask } from 'components/Utils/Validation';
 import { nanoid } from 'nanoid';
 import MaskedInput from 'react-text-mask';
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ export const ContactForm = ({ onSubmit }) => {
   return (
     <Formik
       initialValues={{ name: '', number: '' }}
-      validationSchem={ContactSchema}
+      validationSchema={ContactSchema}
       onSubmit={(values, action) => {
         onSubmit({ id: generateId, ...values }, { action });
       }}
@@ -35,8 +35,7 @@ export const ContactForm = ({ onSubmit }) => {
             component={({ field }) => (
               <MaskedInput
                 {...field}
-                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\).
-                ?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                 title="The phone number must contain 7 digits"
                 mask={phoneNumberMask}
               />
