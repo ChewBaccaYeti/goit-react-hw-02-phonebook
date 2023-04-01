@@ -35,11 +35,11 @@ input {
 }
 
 button {
-  font-size: 12px;
-  border: none;
+  font-size: 16px;
+  // border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: #ffffff;
+  color: black;
 }
 
 h1,

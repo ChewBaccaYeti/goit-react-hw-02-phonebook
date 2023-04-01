@@ -13,12 +13,13 @@ export const Item = styled.li`
 `;
 export const Thumb = styled.div`
   padding: 5px;
-  background-color: #b70a0a;
+  border-radius: 5px;
+  background-color: red;
 
   :hover {
-    background-color: #fc035e;
+    background-color: purple;
   }
   :active {
-    background-color: #fc8003;
+    background-color: orange;
   }
 `;

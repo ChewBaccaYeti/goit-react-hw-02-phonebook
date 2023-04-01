@@ -11,7 +11,7 @@ export const Form = styled(FormikForm)`
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 16px;
 `;
 export const Button = styled.button`
   background-color: #21c53c;
